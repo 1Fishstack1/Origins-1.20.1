@@ -1,0 +1,1 @@
+execute as @e[ type= minecraft:armor_stand, tag= rift_maker_marker] at @e[ type= minecraft:armor_stand, tag= rift_maker_marker] run function rift_maker:rift

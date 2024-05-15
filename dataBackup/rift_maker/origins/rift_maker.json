@@ -1,0 +1,15 @@
+{
+  "powers": [
+    "rift_maker:pocket_dim",
+    "rift_maker:pick_up",
+    "rift_maker:personal_rift",
+    "rift_maker:used_to",
+    "rift_maker:used_to_two",
+    "rift_maker:extra"
+  ],
+  "icon": "minecraft:end_portal_frame",
+  "order": 99,
+  "impact": 2,
+  "name": "Rift Maker",
+  "description":"You are a powerful creature that has the power to warp time and space for your own good"
+}

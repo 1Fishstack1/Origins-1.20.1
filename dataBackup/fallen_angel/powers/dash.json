@@ -1,0 +1,30 @@
+{
+  "name": "Dash",
+  "description": "You don´t have your wings anymore but still have strong legs. You do a leap in the direction you are facing at the cost of some hunger",
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:add_velocity",
+        "z": 2,
+        "space": "local"
+      },
+      {
+        "type": "origins:exhaust",
+        "amount": 0.4
+      }
+    ]
+  },
+  "cooldown": 100,
+  "sound": "minecraft:entity.parrot.fly",
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+    "bar_index": 16
+  },
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": false
+  }
+}

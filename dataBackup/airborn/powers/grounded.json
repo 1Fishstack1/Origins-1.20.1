@@ -1,0 +1,46 @@
+{
+  "name": "Levitate",
+  "description": "You levitate for a few seconds",
+  "type": "origins:multiple",
+  "activate": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "cooldown": 200,
+    "entity_action": {
+      "type": "origins:trigger_cooldown",
+      "power": "*:*_duration"
+    }
+  },
+  "duration": {
+    "type": "origins:cooldown",
+    "cooldown": 120,
+    "hud_render": {
+      "bar_index": 5
+    }
+  },
+  "effect_grounded": {
+    "type": "origins:grounded",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "*:*_duration",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "effect_no_velocity": {
+    "type": "origins:modify_velocity",
+    "axes": ["y"],
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_duration",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  }
+}

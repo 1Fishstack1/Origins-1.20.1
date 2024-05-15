@@ -1,0 +1,10 @@
+{
+  "powers": [
+    "demon:celestial_being"
+  ],
+  "icon": "minecraft:weeping_vines",
+  "order": 99,
+  "impact": 2,
+  "name": "Demon",
+  "description":"You got kicked out of heaven AND the underworld and landed on the earth."
+}

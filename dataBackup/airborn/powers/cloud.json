@@ -1,0 +1,6 @@
+{
+  "name": "Cloud",
+  "description": "You are slightly transparent",
+  "type": "origins:model_color",
+  "alpha": 0.5
+}
