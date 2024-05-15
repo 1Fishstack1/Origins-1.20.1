@@ -1,0 +1,9 @@
+{
+  "name": "Floaty",
+  "description": "You can swim in the air, unless its raining",
+  "type": "origins:swimming",
+  "condition": {
+    "type": "origins:in_rain",
+    "inverted": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "wraith:modes",
+    "wraith:default",
+    "wraith:phase"
+  ],
+  "icon": "minecraft:wither_rose",
+  "order": 99,
+  "impact": 3,
+  "name": "Wraith(Phantom V2)",
+  "description":"The wraith is a alternate form of the phantom origin"
+}

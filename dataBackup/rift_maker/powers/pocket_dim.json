@@ -1,0 +1,60 @@
+{
+  "name": "Pocket Dimension",
+  "description": "You are so powerful that you can warp space and time and create a pocket dimension. (it is basically a 3x3 bedrock platform where you can build out from infinitive)",
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions":
+    [
+      {
+        "type": "origins:passenger_action",
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:dimension",
+            "dimension": "rift_maker_worldgen:pocket_dimension",
+            "inverted": true
+          },
+          "if_action": {
+            "type": "origins:execute_command",
+            "command": "execute in rift_maker_worldgen:pocket_dimension run tp 0 65 0"
+          },
+          "else_action": {
+            "type": "origins:execute_command",
+            "command": "tp @s @e[ type= minecraft:armor_stand, tag= rift_maker_marker, limit= 1]"
+          }
+        },
+        "recursive": true
+      },
+      {
+        "type": "origins:if_else",
+        "condition":
+        {
+          "type": "origins:dimension",
+          "dimension": "rift_maker_worldgen:pocket_dimension",
+          "inverted": true
+        },
+        "if_action":
+        {
+          "type": "origins:execute_command",
+          "command": "function rift_maker:pocket_dim_platform"
+        },
+        "else_action":
+        {
+          "type": "origins:execute_command",
+          "command": "function rift_maker:go_to_marker"
+        }
+      }
+    ]
+  },
+  "cooldown": 100,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+    "bar_index": 16
+  },
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Celestial being",
+  "description": "You lost your immortality but still are a celestial being with more hearts than humans",
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Max health increase",
+    "attribute": "minecraft:generic.max_health",
+    "value": 4,
+    "operation": "addition"
+  }
+}

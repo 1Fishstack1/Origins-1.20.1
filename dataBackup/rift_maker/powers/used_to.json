@@ -1,0 +1,16 @@
+{
+  "name": "Used to",
+  "description": "You are used to being in your dimension and are weaker if not",
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": -4
+  },
+  "tick_rate": 20,
+  "condition": {
+    "type": "origins:dimension",
+    "dimension": "rift_maker_worldgen:pocket_dimension",
+    "inverted": true
+  }
+}

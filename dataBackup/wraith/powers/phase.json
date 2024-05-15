@@ -1,0 +1,82 @@
+{
+  "name": "Phase",
+  "description": "You can phase through walls and are faster at the cost of some hunger",
+  "type": "origins:multiple",
+
+  "phasing": {
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "blindness",
+    "view_distance": 10,
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:unphasable"
+    },
+    "phase_down_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:modes_mode",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.3
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:modes_mode",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "hunger": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:exhaust",
+      "amount": 1
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:modes_mode",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/pencil.json",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:modes_mode",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "translucent": {
+    "type": "origins:model_color",
+    "alpha": 0.5,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:modes_mode",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  }
+}
