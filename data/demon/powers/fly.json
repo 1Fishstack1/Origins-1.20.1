@@ -1,6 +1,6 @@
 {
-  "name": "Levitate",
-  "description": "You levitate for a few seconds",
+  "name": "Winged",
+  "description": "You fly for a few seconds",
   "type": "origins:multiple",
 
   "activate": {
@@ -26,7 +26,7 @@
   "effect_grounded": {
     "type": "origins:grounded",
     "condition": {
-      "type": "apoli:resource",
+      "type": "origins:resource",
       "resource": "*:*_duration",
       "comparison": ">",
       "compare_to": 0
@@ -34,12 +34,7 @@
   },
   
   "effect_no_velocity": {
-    "type": "origins:modify_velocity",
-    "axes": ["y"],
-    "modifier": {
-      "operation": "set_total",
-      "value": 0
-    },
+    "type": "origins:swimming",
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_duration",

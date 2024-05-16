@@ -1,0 +1,103 @@
+{
+  "name": "Breathe",
+  "description": "You fly for a few seconds",
+  "type": "origins:multiple",
+
+  "storage": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 50,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 16
+    }
+  },
+
+  "charge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_storage",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        },
+        {    
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  },
+
+  "air": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_storage",
+          "change": -1
+        },
+        {    
+          "entity_action": {
+            "type": "origins:gain_air",
+            "value": 20
+          }
+        }
+      ]
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_storage",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+          },
+          {    
+            "type": "origins:in_rain"
+          }
+        ],
+        "inverted": true
+        }
+      ]
+    }
+  },
+
+  "on_land": {
+    "type": "origins:action_over_time",
+    "entity_action": {   
+      "type": "origins:gain_air",
+      "value": -20
+    }
+  },
+  "interval": 20,
+  "condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water"
+      },
+      {    
+        "type": "origins:in_rain"
+      }
+    ],
+    "inverted": true
+  }
+}

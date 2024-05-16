@@ -1,0 +1,22 @@
+{
+  "name": "No Magic",
+  "description": "You cant use magic. No ender chest, respawn anchor or enchanting table",
+  "type": "origins:prevent_block_use",
+  "block_condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+          "type": "origins:block",
+          "block": "minecraft:ender_chest"
+      },
+      {
+          "type": "origins:block",
+          "block": "minecraft:enchanting_table"
+      },
+      {
+        "type": "origins:block",
+        "block": "minecraft:respawn_anchor"
+      }
+    ]
+  }
+}
