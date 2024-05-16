@@ -1,10 +1,15 @@
 {
   "powers": [
-    "demon:celestial_being"
+    "demon:fly",
+    "demon:demons_eye",
+    "demon:lifesteal",
+    "demon:no_tp",
+    "demon:no_magic",
+    "demon:ghost"
   ],
   "icon": "minecraft:weeping_vines",
   "order": 99,
   "impact": 2,
   "name": "Demon",
-  "description":"You got kicked out of heaven AND the underworld and landed on the earth."
+  "description":"Hated in heaven and hell, you are condemned to wander the Overworld till the end of times"
 }

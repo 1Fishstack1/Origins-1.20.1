@@ -1,0 +1,36 @@
+{
+  "name": "Ghost",
+  "description": "You turn into a ghost for 5 minutes",
+  "type": "origins:multiple",
+
+  "activate": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "cooldown": 560,
+    "entity_action": {
+      "type": "origins:trigger_cooldown",
+      "power": "*:*_duration"
+    }
+  },
+
+  "duration": {
+    "type": "origins:cooldown",
+    "cooldown": 500,
+    "hud_render": {
+      "bar_index": 1
+    }
+  },
+
+  "effect_grounded": {
+    "type": "origins:model_color",
+    "alpha": 0.2,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_duration",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  }
+}
