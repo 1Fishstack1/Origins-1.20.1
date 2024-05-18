@@ -1,10 +1,12 @@
 {
   "powers": [
     "human_fish:breathe",
+    "origins:water_breathing",
     "origins:swim_speed",
     "origins:aqua_affinity",
     "origins:water_vision",
-    "origins:like_water"
+    "origins:like_water",
+    "origins:conduit_power_on_land"
 
   ],
   "icon": "minecraft:cooked_cod",
