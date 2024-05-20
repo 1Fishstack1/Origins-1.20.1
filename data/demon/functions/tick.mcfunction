@@ -1,0 +1,1 @@
+execute if entity @e[ tag= shapeshift] as @e[ tag= shapeshifter] run tp @e[ tag= shapeshift] @e[ tag= shapeshifter, limit=1]

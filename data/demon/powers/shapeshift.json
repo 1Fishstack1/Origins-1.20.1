@@ -1,0 +1,61 @@
+{
+  "name": "Shapeshift",
+  "description": "You turn into a pig for 5 minutes",
+  "type": "origins:multiple",
+
+  "activate": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "cooldown": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "demon:shapeshift_toggle",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "demon:shapeshift_toggle",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+
+  "deactivate": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "cooldown": 20,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "demon:shapeshift_toggle",
+      "change": -1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "demon:shapeshift_toggle",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "toggle": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 7
+    },
+    "min_action": {
+      "type": "origins:execute_command",
+      "command": "function shapeshift_end"
+    },
+    "max_action": {
+      "type": "origins:execute_command",
+      "command": "function shapeshift_start"
+    }
+  }
+}
