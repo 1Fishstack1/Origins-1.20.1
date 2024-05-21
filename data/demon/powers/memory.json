@@ -1,29 +1,32 @@
 {
-  "name": "Shapeshift",
-  "description": "You turn into a pig for 5 minutes",
+  "hidden": true,
   "type": "origins:multiple",
 
-  "activate": {
-    "type": "origins:toggle",
-    "active_by_default": false,
-    "retain_state": false,
-    "key": {
-      "key": "key.origins.secondary_active"
+  "memory": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 30,
+    "hud_render": {
+      "should_render": true
+    },
+    "max_action": {
+      "type": "origins:change_resource",
+      "resource": "demon:memory_memory",
+      "operation": "set",
+      "change": 1
     }
   },
 
-  "toggle": {
-    "type": "origins:action_over_time",
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_activate"
-    },
-    "rising_action": {
+  "scroll": {
+    "type": "origins:action_on_item_use",
+    "trigger": "instant",
+    "entity_action": {
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "tag @s add shapeshifter"
+          "type": "origins:change_resource",
+          "resource": "demon:memory_memory",
+          "change": 1
         },
         {
           "type": "origins:if_else_list",
@@ -37,7 +40,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon allay ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"aqua\",\"text\":\"Allay\"}]"
               }
             },
             {
@@ -49,7 +52,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon axolotl ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"blue\",\"text\":\"Axolotl\"}]"
               }
             },
             {
@@ -61,7 +64,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon bat ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"gray\",\"text\":\"Bat\"}]"
               }
             },
             {
@@ -73,7 +76,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon camel ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"yellow\",\"text\":\"Camel\"}]"
               }
             },
             {
@@ -85,7 +88,19 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon cat ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"orange\",\"text\":\"Cat\"}]"
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:resource",
+                "resource": "demon:memory_memory",
+                "comparison": "==",
+                "compare_to": 5
+              },
+              "action": {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"orange\",\"text\":\"Cat\"}]"
               }
             },
             {
@@ -97,7 +112,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon chicken ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"white\",\"text\":\"Chicken\"}]"
               }
             },
             {
@@ -109,7 +124,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon cow ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"brown\",\"text\":\"Cow\"}]"
               }
             },
             {
@@ -121,7 +136,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon donkey ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"gray\",\"text\":\"Donkey\"}]"
               }
             },
             {
@@ -133,7 +148,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon frog ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"green\",\"text\":\"Frog\"}]"
               }
             },
             {
@@ -145,7 +160,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon horse ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"brown\",\"text\":\"Horse\"}]"
               }
             },
             {
@@ -157,7 +172,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon mooshroom ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"red\",\"text\":\"Mooshroom\"}]"
               }
             },
             {
@@ -169,7 +184,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon mule ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"gray\",\"text\":\"Mule\"}]"
               }
             },
             {
@@ -181,7 +196,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon ocelot ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"yellow\",\"text\":\"Ocelot\"}]"
               }
             },
             {
@@ -193,7 +208,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon parrot ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"light_blue\",\"text\":\"Parrot\"}]"
               }
             },
             {
@@ -205,7 +220,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon pig ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"pink\",\"text\":\"Pig\"}]"
               }
             },
             {
@@ -217,7 +232,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon rabbit ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"gray\",\"text\":\"Rabbit\"}]"
               }
             },
             {
@@ -229,7 +244,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon sheep ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"white\",\"text\":\"Sheep\"}]"
               }
             },
             {
@@ -241,7 +256,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon skeleton_horse ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"gray\",\"text\":\"Skeleton Horse\"}]"
               }
             },
             {
@@ -253,7 +268,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon sniffer ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"green\",\"text\":\"Sniffer\"}]"
               }
             },
             {
@@ -265,7 +280,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon snow_golem ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"white\",\"text\":\"Snow Golem\"}]"
               }
             },
             {
@@ -277,7 +292,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon strider ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"red\",\"text\":\"Strider\"}]"
               }
             },
             {
@@ -289,7 +304,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon turtle ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"green\",\"text\":\"Turtle\"}]"
               }
             },
             {
@@ -301,7 +316,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon fox ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"red\",\"text\":\"Fox\"}]"
               }
             },
             {
@@ -313,7 +328,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon goat ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"gray\",\"text\":\"Goat\"}]"
               }
             },
             {
@@ -325,7 +340,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon wolf ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"dark_gray\",\"text\":\"Wolf\"}]"
               }
             },
             {
@@ -337,7 +352,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon polar_bear ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"white\",\"text\":\"Polar Bear\"}]"
               }
             },
             {
@@ -349,7 +364,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon panda ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"black\",\"text\":\"Panda\"}]"
               }
             },
             {
@@ -361,7 +376,7 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon llama ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"light_purple\",\"text\":\"Llama\"}]"
               }
             },
             {
@@ -373,26 +388,18 @@
               },
               "action": {
                 "type": "origins:execute_command",
-                "command": "summon creeper ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"shapeshift\"],DeathLootTable:\"/\"}"
+                "command": "title @s actionbar [{\"bold\":true,\"color\":\"gold\",\"text\":\"Selected: \"},{\"color\":\"green\",\"text\":\"Creeper\"}]"
               }
             }
           ]
         }
       ]
     },
-    "falling_action": {
-      "type": "origins:execute_command",
-      "command": "function demon:shapeshift_end"
-    },
-    "interval": 20
-  },
-
-  "invisibility": {
-    "type": "origins:invisibility",
-    "render_armor": false,
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_activate"
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:stick"
+      }
     }
   }
 }

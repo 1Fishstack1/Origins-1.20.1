@@ -5,7 +5,8 @@
     "demon:lifesteal",
     "demon:no_tp",
     "demon:no_magic",
-    "demon:shapeshift"
+    "demon:shapeshift",
+    "demon:memory"
   ],
   "icon": "minecraft:weeping_vines",
   "order": 99,
