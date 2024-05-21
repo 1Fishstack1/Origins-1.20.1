@@ -23,20 +23,10 @@
     }
   },
 
-  "effect_grounded": {
-    "type": "origins:grounded",
+  "swim": {
+    "type": "origins:creative_flight",
     "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_duration",
-      "comparison": ">",
-      "compare_to": 0
-    }
-  },
-  
-  "effect_no_velocity": {
-    "type": "origins:swimming",
-    "condition": {
-      "type": "origins:resource",
+      "type": "apoli:resource",
       "resource": "*:*_duration",
       "comparison": ">",
       "compare_to": 0

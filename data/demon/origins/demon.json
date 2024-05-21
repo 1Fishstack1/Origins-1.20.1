@@ -5,11 +5,11 @@
     "demon:lifesteal",
     "demon:no_tp",
     "demon:no_magic",
-    "demon:ghost"
+    "demon:shapeshift"
   ],
   "icon": "minecraft:weeping_vines",
   "order": 99,
   "impact": 2,
   "name": "Demon",
-  "description":"Hated in heaven and hell, you are condemned to wander the Overworld till the end of times"
+  "description": "Hated in heaven and hell, you are condemned to wander the Overworld till the end of times"
 }
