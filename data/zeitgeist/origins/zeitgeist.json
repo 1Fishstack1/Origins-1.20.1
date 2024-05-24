@@ -1,8 +1,12 @@
 {
-  "powers": ["zeitgeist:keepInventory", "zeitgeist:timeshift"],
+  "powers": [
+    "zeitgeist:keepinventory",
+    "zeitgeist:timeshift",
+    "zeitgeist:friend"
+  ],
   "icon": "minecraft:clock",
   "order": 99,
   "impact": 2,
   "name": "Zeitgeist",
-  "description": "Hated in heaven and hell, you are condemned to wander the Overworld till the end of times"
+  "description": "Killed by the dead but still not able to rest until the end of time"
 }
