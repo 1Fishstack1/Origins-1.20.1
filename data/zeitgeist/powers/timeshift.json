@@ -18,8 +18,14 @@
       "type": "origins:power_active",
       "power": "zeitgeist:timeshift_activate"
     },
-    "rising_action": {},
-    "falling_action": {},
+    "rising_action": {
+      "type": "origins:execute_command",
+      "command": "function zeitgeist:silhouette"
+    },
+    "falling_action": {
+      "type": "origins:execute_command",
+      "command": "kill @e[ tag= silhouette, type= minecraft:armor_stand]"
+    },
     "interval": 20
   },
 
@@ -36,8 +42,8 @@
     "type": "origins:conditioned_attribute",
     "modifier": {
       "attribute": "minecraft:generic.movement_speed",
-      "operation": "multiply_total",
-      "value": 2
+      "operation": "addition",
+      "value": 0.3
     },
     "tick_rate": 20,
     "condition": {
