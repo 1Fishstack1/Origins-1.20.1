@@ -1,0 +1,8 @@
+{
+  "powers": ["zeitgeist:keepInventory", "zeitgeist:timeshift"],
+  "icon": "minecraft:clock",
+  "order": 99,
+  "impact": 2,
+  "name": "Zeitgeist",
+  "description": "Hated in heaven and hell, you are condemned to wander the Overworld till the end of times"
+}

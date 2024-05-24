@@ -1,0 +1,5 @@
+{
+  "name": "Time Entity",
+  "description": "Living with time makes the inventory persistent at all times and invulnerable while timeshifting",
+  "type": "origins:keep_inventory"
+}
