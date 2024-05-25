@@ -3,6 +3,7 @@
   "origins": [
     "demon:demon",
     "human_fish:human_fish",
-    "zeitgeist:zeitgeist"
+    "zeitgeist:zeitgeist",
+    "mimic:mimic"
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "mimic:observer",
+    "mimic:weakling",
+    "mimic:double_jump"
+  ],
+  "icon": "minecraft:rabbit_foot",
+  "order": 99,
+  "impact": 1,
+  "name": "Mimic",
+  "description": "The Mimic, one of the spirits that appears alongside the demon. It's a bone-white Humanoid Abomination with bulging eyes and disgustingly black teeth contorted into a Slasher Smile. It torments Rebecca throughout her night at the mortuary, has a tendency to appear in places the player wasn't previously looking at, and can even appear within seemingly impossible spaces like the inside of a cabinet. It's the page image here for a very good reason"
+}

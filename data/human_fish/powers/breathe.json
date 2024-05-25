@@ -1,6 +1,6 @@
 {
   "name": "Breathe",
-  "description": "You fly for a few seconds",
+  "description": "You have a 5 minutes buffer",
   "type": "origins:multiple",
 
   "storage": {

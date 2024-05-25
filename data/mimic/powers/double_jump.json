@@ -1,0 +1,257 @@
+{
+  "name": "Hybrid Double Jump",
+  "description": "You gain a double jump and dash at the same time",
+
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "start_value": 1
+  },
+  "jumpcheckresource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "start_value": 0
+  },
+  "jump": {
+    "type": "origins:active_self",
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.jump"
+    },
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "y": 0.75,
+          "space": "world",
+          "set": true
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_resource",
+          "change": -1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s run playsound minecraft:entity.ender_dragon.flap master @a[distance=..4] ~ ~ ~ 1 1.4",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s run particle minecraft:cloud ~ ~ ~ 0.3 0 0.3 0.1 15",
+          "permission_level": 4
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_resource",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        {
+          "type": "origins:on_block",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_jumpcheckresource",
+          "comparison": ">=",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "creative",
+          "inverted": true
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water",
+                "inverted": true
+              },
+              {
+                "type": "origins:block",
+                "block": "minecraft:lava",
+                "inverted": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "jumphorizontal": {
+    "type": "origins:active_self",
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.jump"
+    },
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:add_velocity",
+          "z": 0.75,
+          "space": "local_horizontal_normalized",
+          "set": true
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_resource",
+          "change": -1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s run playsound minecraft:entity.ender_dragon.flap master @a[distance=..4] ~ ~ ~ 1 1.4",
+          "permission_level": 4
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s run particle minecraft:cloud ~ ~ ~ 0.1 0.5 0.1 0.1 15",
+          "permission_level": 4
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_resource",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:on_block",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_jumpcheckresource",
+          "comparison": ">=",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "creative",
+          "inverted": true
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water",
+                "inverted": true
+              },
+              {
+                "type": "origins:block",
+                "block": "minecraft:lava",
+                "inverted": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "onlysecondjump": {
+    "type": "origins:active_self",
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.jump"
+    },
+    "cooldown": 0,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumpcheckresource",
+          "change": 1
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_jumpcheckresource",
+          "comparison": ">=",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "jump_regen": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_resource",
+          "change": 1
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumpcheckresource",
+          "change": 0,
+          "operation": "set"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    }
+  }
+}
