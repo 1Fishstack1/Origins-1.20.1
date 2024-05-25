@@ -23,7 +23,7 @@
       "type": "origins:target_condition",
       "condition": {
         "type": "origins:entity_type",
-        "entity_type": "minecraft:allay"
+        "entity_type": "minecraft:player"
       }
     }
   },

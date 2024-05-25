@@ -1,0 +1,16 @@
+{
+  "name": "Worlds Memory",
+  "description": "Changes time-relevant World settings",
+  "type": "origins:active_self",
+  "key": {
+    "key": "key.origins.secondary_active"
+  },
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "function zeitgeist:timemenu"
+  },
+  "cooldown": 20,
+  "hud_render": {
+    "should_render": false
+  }
+}

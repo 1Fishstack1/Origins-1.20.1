@@ -1,7 +1,9 @@
 {
   "powers": [
-    "zeitgeist:keepinventory",
     "zeitgeist:timeshift",
+    "zeitgeist:time",
+    "zeitgeist:keepinventory",
+    "zeitgeist:nofriend",
     "zeitgeist:friend"
   ],
   "icon": "minecraft:clock",

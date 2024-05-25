@@ -19,12 +19,34 @@
       "power": "zeitgeist:timeshift_activate"
     },
     "rising_action": {
-      "type": "origins:execute_command",
-      "command": "function zeitgeist:silhouette"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function zeitgeist:silhouette"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "execute at @e[ tag= silhouette, type= minecraft:armor_stand ] run summon area_effect_cloud ~ ~ ~ {Radius:5f,RadiusPerTick:0f,RadiusOnUse:0f,Duration:200000000,DurationOnUse:0f,Color:0,Tags:[\"ptsd\"],Effects:[{Id:2,Amplifier:1b,Duration:40,ShowParticles:0b},{Id:4,Amplifier:1b,Duration:40,ShowParticles:0b},{Id:15,Amplifier:1b,Duration:40,ShowParticles:0b},{Id:18,Amplifier:1b,Duration:40,ShowParticles:0b},{Id:27,Amplifier:0b,Duration:40,ShowParticles:1b}]}"
+          }
+        }
+      ]
     },
     "falling_action": {
-      "type": "origins:execute_command",
-      "command": "kill @e[ tag= silhouette, type= minecraft:armor_stand]"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[ tag= silhouette, type= minecraft:armor_stand]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[ tag= ptsd, type= minecraft:area_effect_cloud]"
+        }
+      ]
     },
     "interval": 20
   },
@@ -55,8 +77,8 @@
   "phase": {
     "type": "origins:phasing",
     "blacklist": true,
-    "render_type": "remove_blocks",
-    "view_distance": 10,
+    "render_type": "blindness",
+    "view_distance": 40,
     "block_condition": {
       "type": "origins:in_tag",
       "tag": "origins:unphasable"
