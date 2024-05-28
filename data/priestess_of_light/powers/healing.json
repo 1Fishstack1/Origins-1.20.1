@@ -1,0 +1,52 @@
+{
+  "name": "Healing",
+  "description": "Can heal herself and allies within a limited range",
+  "type": "origins:multiple",
+
+  "heal": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "priestess_of_light:light_storage",
+          "change": -20
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 2,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:heal",
+              "amount": 6
+            }
+          }
+        },
+        {
+          "type": "origins:heal",
+          "amount": 6
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function priestess_of_light:sun_power"
+        }
+      ]
+    },
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "priestess_of_light:light_storage",
+      "comparison": ">",
+      "compare_to": 20
+    }
+  }
+}

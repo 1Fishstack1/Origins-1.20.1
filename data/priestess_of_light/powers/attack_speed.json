@@ -1,0 +1,10 @@
+{
+  "name": "Reduced Attack Speed",
+  "description": "Focuses on magic, and likely uses a bow for ranged attacks",
+  "type": "origins:attribute",
+  "modifier": {
+    "attribute": "minecraft:generic.attack_speed",
+    "value": -2,
+    "operation": "addition"
+  }
+}

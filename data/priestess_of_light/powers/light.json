@@ -1,0 +1,90 @@
+{
+  "name": "Goddess's Protection",
+  "description": "The power of daylight gives you the ability to glide",
+  "type": "origins:multiple",
+
+  "storage": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 50,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+      "bar_index": 14
+    }
+  },
+
+  "charge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "priestess_of_light:light_storage",
+      "change": 2
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:exposed_to_sun"
+    }
+  },
+
+  "glide": {
+    "type": "origins:elytra_flight",
+    "render_elytra": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "priestess_of_light:light_storage",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+
+  "depower": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "priestess_of_light:light_storage",
+      "change": -1
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+
+  "particle": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:dust 1 1 0 1 ~ ~ ~ 0 0 0 0.5 2 force"
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+
+  "noelytra": {
+    "type": "origins:restrict_armor",
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:elytra"
+      }
+    }
+  },
+
+  "nether": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "priestess_of_light:light_storage",
+      "operation": "set",
+      "change": 0
+    },
+    "interval": 40,
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:overworld",
+      "inverted": true
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "name": "Protection",
+  "description": "Can create a temporary barrier around herself",
+  "type": "origins:multiple",
+
+  "activate": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "cooldown": 101,
+    "entity_action": {
+      "type": "origins:trigger_cooldown",
+      "power": "priestess_of_light:protection_duration"
+    }
+  },
+
+  "duration": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 0
+    }
+  },
+
+  "shield": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 3,
+      "bientity_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:can_see"
+          },
+          {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "inverted": true,
+                  "type": "origins:nbt",
+                  "nbt": "{inGround:1b}"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:arrow"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:play_sound",
+              "sound": "minecraft:item.shield.block",
+              "volume": 0.5,
+              "pitch": 1
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:dust 1 1 0 1 ~ ~1 ~ 0 0 0 0.5 2 force"
+            },
+            {
+              "type": "origins:add_velocity",
+              "y": 1,
+              "z": -2,
+              "space": "velocity",
+              "client": true,
+              "server": true,
+              "set": true
+            }
+          ]
+        }
+      }
+    },
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "priestess_of_light:protection_duration",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  }
+}
