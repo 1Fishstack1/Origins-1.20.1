@@ -10,8 +10,24 @@
     },
     "cooldown": 101,
     "entity_action": {
-      "type": "origins:trigger_cooldown",
-      "power": "priestess_of_light:protection_duration"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "priestess_of_light:light_storage",
+          "change": -20
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "priestess_of_light:protection_duration"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "priestess_of_light:light_storage",
+      "comparison": ">",
+      "compare_to": 20
     }
   },
 

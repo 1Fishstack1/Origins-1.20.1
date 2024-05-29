@@ -2,7 +2,9 @@
   "powers": [
     "mimic:observer",
     "mimic:weakling",
-    "mimic:double_jump"
+    "mimic:double_jump",
+
+    "mimic:swap"
   ],
   "icon": "minecraft:rabbit_foot",
   "order": 99,

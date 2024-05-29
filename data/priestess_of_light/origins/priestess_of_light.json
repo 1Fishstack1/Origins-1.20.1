@@ -1,14 +1,14 @@
 {
   "powers": [
-    "priestess_of_light:weak",
-    "priestess_of_light:attack_speed",
-    "priestess_of_light:light",
     "priestess_of_light:healing",
-    "priestess_of_light:protection"
+    "priestess_of_light:protection",
+    "priestess_of_light:light",
+    "priestess_of_light:weak",
+    "priestess_of_light:attack_speed"
   ],
   "icon": "minecraft:redstone_torch",
   "order": 99,
   "impact": 1,
-  "name": "Priestess of Light",
-  "description": "Originally, she was an ordinary girl living peacefully in a quiet village until the goddess spoke to her. This event changed her eye color to red and granted her powers. To use her powers at night, she must at least place torches, as the goddess cannot locate her without light. Despite her belief in the goddess, who made her who she is, she fears that the goddess might suddenly abandon her, leaving her powerless"
+  "name": "Light Priestess",
+  "description": "You have been given the power of light from a god"
 }

@@ -1,17 +1,17 @@
 {
   "powers": [
     "human_fish:breathe",
+    "human_fish:food",
     "origins:water_breathing",
     "origins:swim_speed",
     "origins:aqua_affinity",
     "origins:water_vision",
     "origins:like_water",
     "origins:conduit_power_on_land"
-
   ],
   "icon": "minecraft:cooked_cod",
   "order": 99,
   "impact": 2,
   "name": "Human Fish",
-  "description":"Hated in heaven and hell, you are condemned to wander the Overworld till the end of times"
+  "description": "Hated in heaven and hell, you are condemned to wander the Overworld till the end of times"
 }
