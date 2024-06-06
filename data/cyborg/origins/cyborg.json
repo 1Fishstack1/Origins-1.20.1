@@ -1,0 +1,11 @@
+{
+  "powers": [
+    "cyborg:charge",
+    "cyborg:sniper"
+  ],
+  "icon": "minecraft:redstone",
+  "order": 99,
+  "impact": 2,
+  "name": "Cyborg",
+  "description": "wip"
+}

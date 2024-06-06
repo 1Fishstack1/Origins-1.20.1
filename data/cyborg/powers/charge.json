@@ -1,0 +1,90 @@
+{
+  "name": "Dematerialize",
+  "description": "You can quickly dematerialize, becoming a sludge on the floor. While Dematerialized, you are faster, but cannot jump or swim, and have less hearts",
+  "type": "origins:multiple",
+
+  "storage": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 70,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 14
+    }
+  },
+
+  "charge": {
+    "type": "origins:action_on_item_use",
+    "trigger": "instant",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "cyborg:charge_storage",
+          "change": 10
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:dust 1 0 0 1 ~ ~1 ~ 0.2 0.5 0.2 0.1 50 force"
+        }
+      ]
+    },
+    "item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cyborg:charge_storage",
+      "comparison": "<",
+      "compare_to": 70
+    }
+  },
+
+  "decharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "cyborg:charge_storage",
+      "change": -1
+    },
+    "interval": 600,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cyborg:charge_storage",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+
+  "regen": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:heal",
+      "amount": 1
+    },
+    "interval": 100
+  },
+
+  "food": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:feed",
+      "food": 2,
+      "saturation": 0
+    },
+    "condition": {
+      "type": "origins:food_level",
+      "comparison": "<",
+      "compare_to": 10
+    },
+    "interval": 20
+  }
+}

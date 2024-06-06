@@ -1,0 +1,55 @@
+{
+  "name": "Sniper",
+  "description": "You can quickly dematerialize, becoming a sludge on the floor. While Dematerialized, you are faster, but cannot jump or swim, and have less hearts",
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:raycast",
+    "distance": 200,
+    "before_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "cyborg:charge_storage",
+          "change": -10
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.allay.hurt master @a ~ ~ ~ 1 0.5"
+        }
+      ]
+    },
+    "bientity_action": {
+      "type": "origins:damage",
+      "amount": 10,
+      "damage_type": "minecraft:arrow"
+    },
+    "block_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:explode",
+          "power": 5,
+          "destruction_type": "none",
+          "create_fire": false
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 20 force"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.generic.explode master @a"
+        }
+      ]
+    },
+    "command_along_ray": "particle minecraft:dust 1 0 0 1 ~ ~ ~ 0 0 0 0.5 2 force"
+  },
+  "cooldown": 20,
+  "hud_render": {
+    "should_render": false
+  },
+  "key": {
+    "key": "key.origins.primary_active"
+  }
+}
