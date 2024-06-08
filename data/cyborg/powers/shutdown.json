@@ -1,0 +1,33 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+
+  "stun": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    },
+    "axes": ["x", "z"],
+    "condition": {
+      "type": "origins:scoreboard",
+      "objective": "cyborg_shutdown",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "nojump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    },
+    "condition": {
+      "type": "origins:scoreboard",
+      "objective": "cyborg_shutdown",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Powered",
+  "description": "You are faster and stroneger if charged",
+  "type": "origins:multiple",
+
+  "faster": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.05
+    },
+    "tick_rate": 40,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cyborg:charge_storage",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+
+  "stronger": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage ",
+      "operation": "addition",
+      "value": 1
+    },
+    "tick_rate": 40,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cyborg:charge_storage",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+
+  "nightvision": {
+    "type": "origins:night_vision",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cyborg:charge_storage",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+
+  "stun": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    },
+    "axes": ["x", "z"],
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cyborg:charge_storage",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+
+  "nojump": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cyborg:charge_storage",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  }
+}

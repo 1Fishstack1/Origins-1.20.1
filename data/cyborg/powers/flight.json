@@ -1,0 +1,65 @@
+{
+  "name": "Jetpack",
+  "description": "You can fly",
+  "type": "origins:multiple",
+
+  "glide": {
+    "type": "origins:elytra_flight",
+    "render_elytra": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "cyborg:charge_storage",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+
+  "depower": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "cyborg:charge_storage",
+      "change": -1
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+
+  "boost": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:add_velocity",
+      "z": 1,
+      "space": "local",
+      "set": true
+    },
+    "interval": 5,
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+
+  "particle": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle minecraft:dust 1 0 0 1 ~ ~ ~ 0 0 0 0.5 2 force"
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:fall_flying"
+    }
+  },
+
+  "noelytra": {
+    "type": "origins:restrict_armor",
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:elytra"
+      }
+    }
+  }
+}

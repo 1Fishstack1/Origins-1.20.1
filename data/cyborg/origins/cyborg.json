@@ -1,7 +1,10 @@
 {
   "powers": [
     "cyborg:charge",
-    "cyborg:sniper"
+    "cyborg:sniper",
+    "cyborg:powered",
+    "cyborg:flight",
+    "cyborg:shutdown"
   ],
   "icon": "minecraft:redstone",
   "order": 99,
