@@ -1,6 +1,6 @@
 {
-  "name": "Dematerialize",
-  "description": "You can quickly dematerialize, becoming a sludge on the floor. While Dematerialized, you are faster, but cannot jump or swim, and have less hearts",
+  "name": "Charge",
+  "description": "You only need redstone to survive",
   "type": "origins:multiple",
 
   "storage": {
@@ -70,7 +70,7 @@
       "type": "origins:heal",
       "amount": 1
     },
-    "interval": 100
+    "interval": 40
   },
 
   "food": {
