@@ -1,0 +1,14 @@
+{
+  "name": "Radar",
+  "description": "You can see all mobs in a 20 block radius",
+  "type": "origins:entity_glow",
+  "bientity_condition": {
+    "type": "origins:distance",
+    "comparison": "<=",
+    "compare_to": 20
+  },
+  "use_teams": false,
+  "red": 1.0,
+  "green": 0,
+  "blue": 0
+}

@@ -21,7 +21,7 @@
       "resource": "cyborg:charge_storage",
       "change": -1
     },
-    "interval": 20,
+    "interval": 40,
     "condition": {
       "type": "origins:fall_flying"
     }
@@ -31,7 +31,7 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:add_velocity",
-      "z": 1,
+      "z": 0.7,
       "space": "local",
       "set": true
     },

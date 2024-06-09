@@ -19,12 +19,16 @@
           {
             "type": "origins:execute_command",
             "command": "playsound minecraft:entity.allay.hurt master @a ~ ~ ~ 1 0.5"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:campfire_cosy_smoke ~ ~ ~ 1 0 1 0 100 force"
           }
         ]
       },
       "bientity_action": {
         "type": "origins:damage",
-        "amount": 20,
+        "amount": 30,
         "damage_type": "minecraft:arrow"
       },
       "block_action": {

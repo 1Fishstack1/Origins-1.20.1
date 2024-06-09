@@ -4,6 +4,7 @@
     "cyborg:sniper",
     "cyborg:powered",
     "cyborg:flight",
+    "cyborg:radar",
     "cyborg:shutdown"
   ],
   "icon": "minecraft:redstone",
