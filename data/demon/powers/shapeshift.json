@@ -1,6 +1,6 @@
 {
   "name": "Shapeshift",
-  "description": "You turn into the selected mob. ",
+  "description": "You turn into the selected mob (rightclick a stick to select)",
   "type": "origins:multiple",
 
   "activate": {

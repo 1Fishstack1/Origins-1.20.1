@@ -11,7 +11,7 @@
     "cooldown": 200,
     "entity_action": {
       "type": "origins:trigger_cooldown",
-      "power": "*:*_duration"
+      "power": "demon:fly_duration"
     }
   },
 
@@ -27,7 +27,7 @@
     "type": "origins:creative_flight",
     "condition": {
       "type": "apoli:resource",
-      "resource": "*:*_duration",
+      "resource": "demon:fly_duration",
       "comparison": ">",
       "compare_to": 0
     }

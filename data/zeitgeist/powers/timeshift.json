@@ -1,6 +1,6 @@
 {
   "name": "Timeshift",
-  "description": "Makes invisible, 3x movementspeed and walk through blocks. A Silhouette will be placed upon engaging the Timeshift. Disengaging Timeshift will make me normal again",
+  "description": "Makes invisible, 3x movementspeed and walk through blocks. A Silhouette will be placed upon engaging the Timeshift. Disengaging Timeshift will make you normal again",
   "type": "origins:multiple",
 
   "activate": {

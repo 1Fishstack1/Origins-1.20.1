@@ -13,6 +13,7 @@
         "effect": {
           "effect": "minecraft:resistance",
           "duration": 40,
+          "amplifier": 5,
           "is_ambient": false,
           "show_particles": false,
           "show_icon": true

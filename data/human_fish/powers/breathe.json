@@ -1,6 +1,6 @@
 {
   "name": "Breathe",
-  "description": "You have a 5 minutes buffer",
+  "description": "You have a 5 minute air buffer",
   "type": "origins:multiple",
 
   "storage": {
@@ -17,7 +17,7 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "*:*_storage",
+      "resource": "human_fish:breathe_storage",
       "change": 10
     },
     "condition": {
@@ -41,7 +41,7 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "resource": "*:*_storage",
+          "resource": "human_fish:breathe_storage",
           "change": -1
         },
         {
@@ -56,7 +56,7 @@
       "conditions": [
         {
           "type": "origins:resource",
-          "resource": "*:*_storage",
+          "resource": "human_fish:breathe_storage",
           "comparison": ">",
           "compare_to": 0
         },
