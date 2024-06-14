@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "mage:mana",
+    "mage:flight",
+    "mage:sniper"
+  ],
+  "icon": "minecraft:chorus_fruit",
+  "order": 99,
+  "impact": 2,
+  "name": "Mage",
+  "description": "You are able to use magic to your advantage"
+}

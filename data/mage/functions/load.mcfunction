@@ -1,0 +1,1 @@
+scoreboard objectives add cyborg_shutdown dummy

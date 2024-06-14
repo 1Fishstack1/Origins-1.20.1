@@ -6,6 +6,7 @@
     "zeitgeist:zeitgeist",
     "mimic:mimic",
     "priestess_of_light:priestess_of_light",
-    "cyborg:cyborg"
+    "cyborg:cyborg",
+    "mage:mage"
   ]
 }

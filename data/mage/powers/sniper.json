@@ -1,0 +1,107 @@
+{
+  "name": "Sniper",
+  "description": "You can fire a strong beam of energy that damages the entity it hits or causes an explosion on the ground",
+  "type": "origins:multiple",
+
+  "shoot": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:raycast",
+      "distance": 200,
+      "before_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:change_resource",
+            "resource": "mage:mana_storage",
+            "change": -10
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:entity.generic.death master @s ~ ~ ~ 2 0.7"
+          }
+        ]
+      },
+      "bientity_action": {
+        "type": "origins:offset",
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:explode",
+              "power": 2,
+              "destruction_type": "none",
+              "create_fire": false
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 20 force"
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:dust 1 0 1 1 ~ ~ ~ 0.8 0.8 0.8 5 500 force"
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "playsound minecraft:entity.generic.explode master @a"
+            }
+          ]
+        },
+        "y": 1
+      },
+      "block_action": {
+        "type": "origins:offset",
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:explode",
+              "power": 2,
+              "destruction_type": "none",
+              "create_fire": false
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:explosion ~ ~ ~ 1 1 1 1 20 force"
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:dust 1 0 1 1 ~ ~ ~ 0.8 0.8 0.8 5 500 force"
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "playsound minecraft:entity.generic.explode master @a"
+            }
+          ]
+        },
+        "y": 1
+      },
+      "command_along_ray": "particle minecraft:dust 1 0 0 1 ~ ~ ~ 0 0 0 0.5 2 force"
+    },
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "mage:mana_storage",
+      "comparison": ">",
+      "compare_to": 10
+    }
+  },
+
+  "noexplosiondamage": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "explosion"
+    },
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    }
+  }
+}
