@@ -7,7 +7,7 @@
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:raycast",
-      "distance": 200,
+      "distance": 50,
       "before_action": {
         "type": "origins:and",
         "actions": [
