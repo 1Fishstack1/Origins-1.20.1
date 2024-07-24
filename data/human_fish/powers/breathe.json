@@ -76,5 +76,20 @@
         }
       ]
     }
+  },
+
+  "bottled_air": {
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "human_fish:breathe_storage",
+      "change": 300
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:potion"
+      }
+    }
   }
 }

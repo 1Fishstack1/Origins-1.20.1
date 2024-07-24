@@ -2,9 +2,7 @@
   "powers": [
     "mimic:observer",
     "mimic:weakling",
-    "mimic:stalker",
-
-    "mimic:swap"
+    "mimic:stalker"
   ],
   "icon": "minecraft:rabbit_foot",
   "order": 99,

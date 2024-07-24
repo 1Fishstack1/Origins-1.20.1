@@ -4,9 +4,7 @@
     "zeitgeist:time",
     "zeitgeist:keepinventory",
     "zeitgeist:nofriend",
-    "zeitgeist:friend",
-
-    "zeitgeist:swap"
+    "zeitgeist:friend"
   ],
   "icon": "minecraft:clock",
   "order": 99,
