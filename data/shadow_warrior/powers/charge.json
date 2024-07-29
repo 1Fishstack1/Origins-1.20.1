@@ -1,0 +1,42 @@
+{
+  "name": "Charge",
+  "description": "You charge up in low light level",
+  "type": "origins:multiple",
+
+  "storage": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 100,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 16
+    }
+  },
+
+  "charge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "shadow_warrior:charge_storage",
+      "change": 2
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:exposed_to_sun",
+      "inverted": true
+    }
+  },
+
+  "decharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "shadow_warrior:charge_storage",
+      "change": -1
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:exposed_to_sun"
+    }
+  }
+}

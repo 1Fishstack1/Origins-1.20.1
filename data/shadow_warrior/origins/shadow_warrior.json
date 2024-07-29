@@ -1,0 +1,13 @@
+{
+  "powers": [
+    "shadow_warrior:charge",
+    "shadow_warrior:shadowborn",
+    "shadow_warrior:sneaky",
+    "shadow_warrior:shadow_dash"
+  ],
+  "icon": "minecraft:coal_block",
+  "order": 99,
+  "impact": 2,
+  "name": "Shadow Warrior",
+  "description": "Warrior of the Shadows"
+}

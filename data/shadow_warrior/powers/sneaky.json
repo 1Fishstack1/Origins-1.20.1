@@ -1,0 +1,54 @@
+{
+  "name": "Sneaky",
+  "description": "You are faster and stroneger if in a low light",
+  "type": "origins:multiple",
+
+  "bar": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 70,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+      "bar_index": 12
+    }
+  },
+
+  "base": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "shadow_warrior:sneaky_bar",
+      "change": 10
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:sneaking"
+    }
+  },
+
+  "cooldown": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "shadow_warrior:sneaky_bar",
+      "change": -10
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:sneaking",
+      "inverted": true
+    }
+  },
+
+  "invis": {
+    "type": "origins:invisibility",
+    "render_armor": false,
+    "render_outline": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "shadow_warrior:sneaky_bar",
+      "comparison": "==",
+      "compare_to": 70
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Shadowborn",
+  "description": "You are faster and stronger if in a low light",
+  "type": "origins:multiple",
+
+  "faster": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.05
+    },
+    "tick_rate": 40,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "shadow_warrior:charge_storage",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+
+  "nightvision": {
+    "type": "origins:night_vision",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "shadow_warrior:charge_storage",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  }
+}

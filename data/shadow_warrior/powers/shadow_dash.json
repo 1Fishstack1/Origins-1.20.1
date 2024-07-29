@@ -1,0 +1,51 @@
+{
+  "name": "Shadow Dash",
+  "description": "You get speed and strength for 10 seconds",
+  "type": "origins:multiple",
+
+  "shoot": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:speed",
+              "duration": 200,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:strength",
+              "duration": 200,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+            }
+          ]
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "shadow_warrior:charge_storage",
+          "change": -20
+        }
+      ]
+    },
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "shadow_warrior:charge_storage",
+      "comparison": ">",
+      "compare_to": 20
+    }
+  }
+}
