@@ -1,0 +1,110 @@
+{
+  "name": "Charge",
+  "description": "You only need blood to survive",
+  "type": "origins:multiple",
+
+  "storage": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 70,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 5
+    }
+  },
+
+  "charge": {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "vampire:charge_storage",
+          "change": 10
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:dust 1 0 0 1 ~ ~1 ~ 0.2 0.5 0.2 0.1 50 force"
+        }
+      ]
+    },
+    "cooldown": 1,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 5
+    }
+  },
+
+  "decharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "vampire:charge_storage",
+      "change": -1
+    },
+    "interval": 600,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "vampire:charge_storage",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+
+  "regen": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:heal",
+      "amount": 1
+    },
+    "interval": 40
+  },
+
+  "food": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:feed",
+      "food": 2,
+      "saturation": 0
+    },
+    "condition": {
+      "type": "origins:food_level",
+      "comparison": "<",
+      "compare_to": 10
+    },
+    "interval": 20
+  },
+
+  "starve": {
+    "type": "origins:damage_over_time",
+    "interval": 20,
+    "onset_delay": 1,
+    "damage": 2,
+    "damage_easy": 1,
+    "damage_type": "origins:hurt_by_water",
+    "protection_effectiveness": 0,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "vampire:charge_storage",
+      "comparison": "<",
+      "compare_to": 0
+    }
+  },
+
+  "vegan_blood": {
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "vampire:charge_storage",
+      "change": 30
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:beetroot_soup"
+      }
+    }
+  }
+}

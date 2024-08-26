@@ -1,0 +1,9 @@
+{
+  "name": "Lifesteal",
+  "description": "If you kill a being, you get 2 hearts back",
+  "type": "origins:self_action_on_kill",
+    "entity_action": {
+        "type": "origins:heal",
+        "amount": 4.0
+    }
+}

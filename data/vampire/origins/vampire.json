@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "vampire:shapeshift",
+    "vampire:nightvision",
+    "vampire:lifesteal",
+    "vampire:charge",
+    "vampire:the_sun_is_a_deadly_lazer"
+  ],
+  "icon": "minecraft:beetroot_soup",
+  "order": 99,
+  "impact": 2,
+  "name": "Vampire",
+  "description": "Slight anger issues and always open for some blood"
+}

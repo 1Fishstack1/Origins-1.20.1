@@ -1,0 +1,64 @@
+{
+  "name": "Allergies",
+  "description": "The sun is a deadly lazer. Oh and water weakens you",
+  "type": "origins:multiple",
+
+  "burn": {
+    "type": "origins:burn",
+    "interval": 20,
+    "burn_duration": 1,
+    "condition": {
+      "type": "origins:exposed_to_sun"
+    }
+  },
+
+  "blind": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -3,
+    "max_stacks": 1,
+    "duration_per_stack": 100,
+    "tick_rate": 20,
+    "effect": {
+      "effect": "minecraft:blindness",
+      "is_ambient": true,
+      "show_particles": true,
+      "show_icon": true
+    },
+    "condition": {
+      "type": "origins:exposed_to_sun"
+    }
+  },
+
+  "weak": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -20,
+    "max_stacks": 361,
+    "duration_per_stack": 10,
+    "effects": [
+      {
+        "effect": "minecraft:weakness",
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": true
+      },
+      {
+        "effect": "minecraft:slowness",
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": true
+      }
+    ],
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        },
+        {
+          "type": "origins:in_rain"
+        }
+      ]
+    }
+  }
+}

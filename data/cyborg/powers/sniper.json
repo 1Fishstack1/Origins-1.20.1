@@ -28,7 +28,7 @@
       },
       "bientity_action": {
         "type": "origins:damage",
-        "amount": 30,
+        "amount": 60,
         "damage_type": "minecraft:arrow"
       },
       "block_action": {

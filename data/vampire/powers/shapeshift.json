@@ -1,0 +1,57 @@
+{
+  "name": "Batman",
+  "description": "You turn into a bat",
+  "type": "origins:multiple",
+
+  "activate": {
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "retain_state": false,
+    "key": {
+      "key": "key.origins.primary_active"
+    }
+  },
+
+  "toggle": {
+    "type": "origins:action_over_time",
+    "condition": {
+      "type": "origins:power_active",
+      "power": "vampire:shapeshift_activate"
+    },
+    "rising_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "tag @s add vampire"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "summon bat ~ ~ ~ {Invulnerable:1b,Team:\"noCLLSN\",NoAI:1b,CanPickUpLoot:0b,Tags:[\"vampirebat\"],DeathLootTable:\"/\"}"
+        }
+      ]
+    },
+    "falling_action": {
+      "type": "origins:execute_command",
+      "command": "function vampire:shapeshift_end"
+    },
+    "interval": 20
+  },
+
+  "invisibility": {
+    "type": "origins:invisibility",
+    "render_armor": false,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "vampire:shapeshift_activate"
+    }
+  },
+
+  "fly": {
+    "type": "origins:creative_flight",
+    "condition": {
+      "type": "origins:power_active",
+      "power": "vampire:shapeshift_activate"
+    }
+  }
+}

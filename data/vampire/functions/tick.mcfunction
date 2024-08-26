@@ -1,0 +1,1 @@
+execute if entity @e[ tag= vampirebat] as @e[ tag= vampire] run tp @e[ tag= vampirebat] @e[ tag= vampire, limit=1]
