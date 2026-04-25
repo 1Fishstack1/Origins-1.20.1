@@ -3,11 +3,8 @@
   "origins": [
     "demon:demon",
     "human_fish:human_fish",
-    "zeitgeist:zeitgeist",
-    "mimic:mimic",
     "priestess_of_light:priestess_of_light",
     "cyborg:cyborg",
-    "mage:mage",
     "shadow_warrior:shadow_warrior",
     "vampire:vampire"
   ]
