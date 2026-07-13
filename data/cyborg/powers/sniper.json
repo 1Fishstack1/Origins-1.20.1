@@ -27,9 +27,24 @@
         ]
       },
       "bientity_action": {
-        "type": "origins:damage",
-        "amount": 60,
-        "damage_type": "minecraft:arrow"
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:player"
+          },
+          "if_action": {
+            "type": "origins:damage",
+            "amount": 12,
+            "damage_type": "minecraft:arrow"
+          },
+          "else_action": {
+            "type": "origins:damage",
+            "amount": 25,
+            "damage_type": "minecraft:arrow"
+          }
+        }
       },
       "block_action": {
         "type": "origins:offset",
